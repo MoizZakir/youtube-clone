@@ -1,0 +1,71 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    align-items: center;
+    /* border: 1px solid black; */
+    position: sticky;
+    top: 0;
+}
+.logo{
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+   
+    /* border: 1px solid green; */
+    padding: 0 10px;
+    position: relative;
+    
+    
+}
+.logo span{
+    font-weight:bolder;
+    font-variant:normal;
+    
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 0;
+    padding: 0 5px;
+}
+.serachbar{
+    width: 45%;
+    border: 1px solid rgb(152, 152, 152);
+    height: 6vh;
+    border-radius: 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.serachbar input{
+    border: none;
+    width: 90%;
+    outline: none;
+}
+.serachbar button{
+ 
+    height: 100%;
+    border: none;
+    width: 60px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+.signupbtn{
+    width: 10%;
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+}
+.signupbtn button{
+    background: none;
+
+    padding: 10px 8px;
+
+    height: 35px;
+    border-radius: 10px;
+    border: 0.5px solid rgb(195, 195, 195);
+    color: blue;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: space-around;
+}
