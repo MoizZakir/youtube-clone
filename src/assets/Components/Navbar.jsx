@@ -5,10 +5,15 @@ import { LuMenu } from "react-icons/lu";
 import { CiSearch } from "react-icons/ci";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
+import Sidebar from './Sidebar';
+
 const Navbar = () => {
   return (
     <div className='navbar'>
-       <div className="logo" > <LuMenu size={20} /><FaYoutube size={30} color='red' /> <span>YouTube</span><sup>pk</sup></div>
+       <div className="logo" > <div className='logoimg'> <LuMenu size={20} /><FaYoutube size={30} color='red' /> <span>YouTube</span><sup>pk</sup></div>
+       <Sidebar className='sidebar'/>
+       
+        </div>
        <div className="serachbar">
         <input type="search" placeholder='Search' />
         <button><CiSearch /></button>
