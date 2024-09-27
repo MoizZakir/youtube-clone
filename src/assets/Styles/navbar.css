@@ -5,7 +5,7 @@
     align-items: center;
     /* border: 1px solid black; */
     position: sticky;
-    top: 1px;
+    top: 0px;
     background-color: white;
 }
 .logo{
@@ -13,7 +13,9 @@
     margin-left: 10px;
     display: flex;
     flex-direction: column;
-    height: 5vh;
+    /* justify-content: center; */
+    height: 6vh;
+    /* border: 1px solid purple; */
     
     
     
@@ -28,6 +30,8 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 15px;
+    /* width: 20%;   */
 }
 .logo span{
     font-weight:bolder;
@@ -38,7 +42,8 @@
     padding: 0 5px;
 }
 .serachbar{
-    width: 45%;
+    /* width: 45%; */
+    
     border: 1px solid rgb(152, 152, 152);
     height: 6vh;
     border-radius: 10px ;
@@ -60,13 +65,28 @@
     border-bottom-right-radius: 10px;
 
 }
+.menuebar{
+    display: none;
+}
 .signupbtn{
-    width: 10%;
+    width: 20%;
     /* border: 1px solid green; */
+    font-size: 16px;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+    
+    
+    gap: 20px;
+
 }
-.signupbtn button{
+.dotbtn{
+    border: none;
+    background: none;
+    font-size: 15px;
+}
+.signupbtn button:nth-child(2){
     background: none;
 
     padding: 10px 8px;
@@ -80,6 +100,32 @@
     font-size: 15px;
     justify-content: space-around;
 }
+@media (max-width:550px) {
+    .signupbtn button:nth-child(2){
+        background: none;
+    
+        padding: 8px 8px;
+    
+        height: 35px;
+        border-radius: 10px;
+        border: 0.5px solid rgb(195, 195, 195);
+        color: blue;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        justify-content: space-around;
+    }
+    .signupbtn{width: 25%;}
+    .menuebar{
+        display: block;
+    }
+    .signupbtn{
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+    
+}
+
 .sidebar-item{
     display: flex;
     margin: 5px 0;
@@ -94,21 +140,36 @@
     border-radius: 10px;
 }
 .sidebar{
-    /* margin-top: 11px; */
+
     display: flex;
+    
     position: relative;
+    top:10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
-    left: -20px;
+    left:-20px;
+    /* border: 1px solid black; */
     overflow: hidden;
-    /* padding: 10px 100px; */
+   
     padding-top: 10px;
     flex-direction: column;
     min-height: 90vh;
-    width: 170px;
+    width: 180px;
+
     background-color: rgb(255, 255, 255);
+    animation-name: animation;
+    animation-duration: 0.4s;
     
     
+}
+@keyframes animation{
+    from{
+        left:-1000px
+    }
+    to{
+        left: -20px;
+
+    }
 }
 .sidebar:hover{
     overflow-y: scroll;
@@ -157,4 +218,16 @@ hr{
     font-size: 13px;
     justify-content: space-around;
 
+}
+.searchbtn{
+    width:50%;
+    /* border: 1px solid red; */
+
+    display:flex;
+    justify-content: flex-end;
+}
+.searchbtn button{
+    background: none;
+    border:none;
+    font-size: 20px;
 }
