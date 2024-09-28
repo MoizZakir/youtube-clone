@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/navbar.css'
 import { FaArrowLeft, FaRegUserCircle, FaYoutube } from "react-icons/fa"
 import { LuMenu } from "react-icons/lu";
@@ -7,17 +7,28 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 import Sidebar from './Sidebar';
 
-const Navbar = () => {
+const Navbar = ({type}) => {
   const [searchOpen,setSearchOpen]=useState(false);
   const [sidebaropen,setSidebarOpen]=useState(false);
   const width=window. innerWidth
   console.log('width===>  ',width)
+  useEffect(()=>{
+    if(width<786){
+      setSidebarOpen(()=>!sidebaropen)
+    }
+  },[width])
+  useEffect(()=>{
+    if(type=='videopage'){
+      setSidebarOpen(()=>!sidebaropen)
+    }
+  },[type])
   return (
     <div className='navbar'>
        <div style={{display:searchOpen && 'none'}} className="logo" > <div className='logoimg'> <LuMenu className='menuebar' size={20} onClick={()=>setSidebarOpen(!sidebaropen)} /><FaYoutube size={30} color='red' /> <span>YouTube</span><sup>pk</sup></div>
-    {width>=550?( <Sidebar className='sidebar'/>):sidebaropen?( <Sidebar className='sidebar'/>):!sidebaropen?'':''
+ 
+{!sidebaropen &&( <Sidebar className='sidebar'/>)}
 
-    }  
+    
         </div>
        {width<=550 &&(
         <div style={{width:searchOpen?'10%':'25%', justifyContent:searchOpen?'flex-start':'flex-end'}} className='searchbtn'>

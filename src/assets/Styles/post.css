@@ -22,10 +22,12 @@
 }
 .post-body{
     display: flex;
+    padding-top: 5px;
     gap: 5px;
 }
 .post-body p{
     font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 .post-body img{

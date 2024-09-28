@@ -9,7 +9,7 @@ import Feed from '../Components/Feed'
 const Home = () => {
   return (
     <div className='Home'>
-        <Navbar/>
+        <Navbar type='homepage'/>
       <Feed/>
        
     </div>

@@ -8,6 +8,7 @@ import {
 
 } from "react-router-dom";
 import Home from './assets/Pages/Home';
+import VideoPage from './assets/Pages/VideoPage';
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route path="/post/:id" element={<VideoPage/>} />
 
         </Routes>
       </BrowserRouter>
