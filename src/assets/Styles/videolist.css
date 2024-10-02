@@ -9,7 +9,7 @@
 
 .videolist img{
     width: 50%;
-    height: 13vh;
+    height: 35vh;
     object-fit: cover;
     border-radius: 8px;
 }
