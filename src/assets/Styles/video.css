@@ -15,17 +15,20 @@
     gap: 20px;
     font-size: 20px;
     width: 5rem;
-    padding: 4px 3px;
+    padding: 12px 3px;
+    margin-left: 30px;
+    margin-top: 10px;
     
 
 }
 .main-video-section1{
     display: flex;
     padding-top: 10px;
+    padding-left: 30px;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    /* gap: 10px; */
     padding-left: 5px;
     width: 100%;
 }
