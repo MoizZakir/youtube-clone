@@ -17,12 +17,12 @@
     box-shadow: 6px 10px 15px -3px rgba(0,0,0,0.1); 
     padding-top: 40px;
 }
-.login h4{
+.login h3{
     display: flex;
-    position: absolute;
+    
     align-items: center;
     gap: 5px;
-    margin-left: -90px;
+    
 
     
 top:158px;
