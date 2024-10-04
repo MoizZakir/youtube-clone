@@ -8,7 +8,7 @@ const Video = ({ tit, url }) => {
     return (
         <div className='video'>
             <div className='main-video' >
-                <ReactPlayer style={{ zIndex: 2 }} width="100%" height="30%"   url={url}
+                <ReactPlayer style={{ zIndex: 2 }} width="90%" height="30%"   url={url}
                     controls={true} playing={true} />
 
                 <h3>{tit}</h3>

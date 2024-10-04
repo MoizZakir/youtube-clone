@@ -86,9 +86,12 @@
     }
 }
 @media (max-width:768px) {
-    .main-video{
+    .main-video h3{
+        font-size: 15px;
+        padding-left: 10px;
       
     }
+    
     .video-right{
         width: 100%;
     }
