@@ -17,6 +17,7 @@ const Login = () => {
         <p className='account' > Create an Account <span>.click here</span></p>
         <p className='forget' > Forget Passowrd <span>.click here</span></p>
         
+        
      
       </div>
     </div>

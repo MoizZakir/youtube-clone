@@ -13,7 +13,10 @@ import SearchPage from './assets/Pages/SearchPage';
 import Signup from './assets/Pages/Signup';
 import Login from './assets/Pages/Login';
 import Create from './assets/Pages/Create';
+import { useSelector } from 'react-redux';
 function App() {
+  const user=useSelector(state=>state.user)
+  console.log('==>redux user ',user.currentUser)
 
   return (
     <>

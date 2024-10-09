@@ -31,30 +31,29 @@ const Video = ({ tit, url }) => {
 
             </div>
             <div className='video-right'>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
-                <VideoList/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                <VideoList type='video'/>
+                
+                <VideoList type='video'/>
 
             </div>
 

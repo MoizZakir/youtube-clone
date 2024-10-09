@@ -8,7 +8,7 @@
     align-items: center;
     width: 100vw;
     padding-left: 200px;
-    border: 1px solid green;
+    
 }
 @media (max-width:768px) {
     .search-main-post{

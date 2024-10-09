@@ -1,10 +1,10 @@
 import React from 'react'
 import '../Styles/videolist.css'
 
-const VideoList = () => {
+const VideoList = ({type}) => {
   return (
     <div className='videolist'>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwOfbpKwLRP91JD52SV4ptdAUSqhcFcFYjDg&s" alt="" />
+        <img style={{width:type=='video'?'130px':'50%',height:type=='video'?'17vh':'30vh'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwOfbpKwLRP91JD52SV4ptdAUSqhcFcFYjDg&s" alt="" />
         <div>
             <p>Modern Console Tbale Design Ideas 2023| Sideboard designs ..
             </p>
