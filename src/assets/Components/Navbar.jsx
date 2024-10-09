@@ -7,6 +7,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 const Navbar = ({type}) => {
   const [searchOpen,setSearchOpen]=useState(false);
@@ -37,12 +38,16 @@ const searchHanlder=()=>{
   },[type])
   return (
     <div className='navbar'>
+              
+
        <div style={{display:searchOpen && 'none'}} className="logo" > <div className='logoimg'> <LuMenu className='menuebar' size={20} onClick={()=>setSidebarOpen(!sidebaropen)} /><FaYoutube size={30} color='red' /> <span>YouTube</span><sup>pk</sup></div>
  
 {!sidebaropen &&( <Sidebar className='sidebar'/>)}
 
     
         </div>
+      
+
        {width<=550 &&(
         <div style={{width:searchOpen?'10%':'25%', justifyContent:searchOpen?'flex-start':'flex-end'}} className='searchbtn'>
         <button onClick={()=>setSearchOpen(!searchOpen)}>
