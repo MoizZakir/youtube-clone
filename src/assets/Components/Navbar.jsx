@@ -8,10 +8,14 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { brown } from '@mui/material/colors';
 
 const Navbar = ({type}) => {
   const [searchOpen,setSearchOpen]=useState(false);
   const [sidebaropen,setSidebarOpen]=useState(false);
+  const user=useSelector(state=>state.user.currentUser)
+  console.log('===> ,',user)
   const search=useRef()
   const navigate=useNavigate()
   console.log(search.current)
@@ -67,7 +71,8 @@ const searchHanlder=()=>{
       
        <div style={{display:searchOpen && 'none'}} className="signupbtn">
        <button className='dotbtn'><BsThreeDotsVertical  /></button>
-       <button><FaRegUserCircle /> Sign in</button>
+       {user?(<p style={{ marginRight:'5px',padding:"5px", borderRadius:"50%", height:"25px",width:'25px',textAlign:'center', backgroundColor:"brown",color:"white"}}>{user?.name[0]}</p>):(<button><FaRegUserCircle /> Sign in</button>)}
+       
        </div>
 
     </div>

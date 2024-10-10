@@ -4,6 +4,8 @@ import { TextField } from '@mui/material'
 import { FaYoutube } from 'react-icons/fa'
 import useSignup from '../../APIs calls/signupApi.js'
 import { useDispatch } from 'react-redux'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Signup = () => {
@@ -35,6 +37,7 @@ await useSignup(obj,dispatch)
   return (
     <div className='signup' >
       <div className="signup-body">
+        <ToastContainer/>
         <FaYoutube style={{position:'absolute', color:"red", fontSize:"30px"}}/>
         <h3> Create an Account</h3>
         <form action="">

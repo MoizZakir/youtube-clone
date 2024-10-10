@@ -1,34 +1,87 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/create.css'
+import { Cloudinary } from '@cloudinary/url-gen';
+import { auto, thumbnail } from '@cloudinary/url-gen/actions/resize';
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+import { AdvancedImage } from '@cloudinary/react';
+import Post from '../Components/Post';
+import useUploadVideo from '../../APIs calls/uploadVideo';
 
 const Create = () => {
-  const [formData, setFormData] = useState({
-    title: '',
-    keywords: '',
-    description: '',
-    thumbnail: null,
-    video: null,
-  });
-  const name=useRef()
-  name.current='cdssd'
+  const [load,setLoad]=useState(true)
+  let title=useRef()
+  let desc=useRef()
+  let video=useRef()
+  let img=useRef()
+  let keywords=useRef()
+  let videoUrl=useRef()
+  let imgUrl=useRef()
   
-  console.log(name,)
+ 
+ 
+  
+  
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: files ? files[0] : value,
-    }));
-  };
+  
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData); // Handle form submission (e.g., send to server)
+  const handleSubmit = async (e) => {
+    async function fileSender(type){
+    const data=new FormData()
+    console.log('moiz')
+    if(type=='image'){
+
+      data.append('file',img.current)
+    }
+    else{
+      data.append('file',video.current)
+
+    }
+    data.append('upload_preset','myCloud')
+    data.append('cloud_name`','dszfpdae2')
+    
+    try {
+      if(!img.current && !video.current  ) return alert('please add data')
+        
+      const res=await fetch(`https://api.cloudinary.com/v1_1/dszfpdae2/${type}/upload`,{method:"POST",body:data})
+      setLoad(()=>!load)
+      const cloudData=await res.json()
+      console.log(cloudData?.url)
+      if(type=="video"){
+        videoUrl.current=cloudData?.url
+        if(cloudData?.url){
+          setLoad(true)
+          
+        }
+      }
+      else{
+        imgUrl.current=cloudData.url
+        
+      }
+
+   
+   
+   
+    } catch (error) {
+      
+    }}
+    await fileSender('video')
+    await fileSender('image')
+    const obj={
+      title:title.current,
+      thumbnail:imgUrl.current
+      ,video:videoUrl.current,
+      keywords:keywords.current.split(','),
+      desc:desc.current
+    }
+
+    await useUploadVideo(obj)
+
+    
+ 
   };
 
   return (
-    <form className="upload-form" onSubmit={handleSubmit}>
+    <div className="upload-form" >
       <h2>Upload a New Video</h2>
       <p>Fill out the form to add a new video to your library.</p>
       
@@ -38,35 +91,36 @@ const Create = () => {
           type="text"
           id="title"
           name="title"
-          value={formData.title}
-          onChange={handleChange}
+          onChange={(e)=>title.current=e.target.value}
+          
           placeholder="Enter a title for your video"
-          required
-        />
+          
+          />
       </div>
       
       <div className="form-group">
         <label htmlFor="keywords">Keywords</label>
         <input
+          onChange={(e)=>keywords.current=e.target.value}
+          
           type="text"
           id="keywords"
           name="keywords"
-          value={formData.keywords}
-          onChange={handleChange}
+          
           placeholder="Enter keywords separated by commas"
-          required
-        />
+          
+          />
       </div>
 
       <div className="form-group">
         <label htmlFor="description">Description</label>
         <textarea
+          onChange={(e)=>desc.current=e.target.value}
           id="description"
           name="description"
-          value={formData.description}
-          onChange={handleChange}
+      
           placeholder="Provide a description for your video"
-          required
+          
         />
       </div>
 
@@ -74,28 +128,29 @@ const Create = () => {
         <label htmlFor="thumbnail">Thumbnail</label>
         <input
           type="file"
+          
           id="thumbnail"
           name="thumbnail"
           accept="image/*"
-          onChange={handleChange}
-          required
-        />
+          onChange={(e)=>img.current=e.target.files[0]}
+          
+          />
       </div>
 
       <div className="form-group file-input">
         <label htmlFor="video">Video File</label>
         <input
+          onChange={(e)=>video.current=e.target.files[0]}
           type="file"
           id="video"
           name="video"
           accept="video/*"
-          onChange={handleChange}
-          required
+         
         />
       </div>
 
-      <button type="submit">Upload Video</button>
-    </form>
+      <button  onClick={()=>handleSubmit()}>{load?'Upload Video ':'wait....'}</button>
+    </div>
   );
 };
 

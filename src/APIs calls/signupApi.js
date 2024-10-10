@@ -1,6 +1,7 @@
 import axios from "axios"
 import Cookies from 'universal-cookie';
 import { registerFailure, registerStart, registerSuccess } from "../Redux/UserReducers";
+import { toast } from "react-toastify";
 
 const useSignup=async(obj,dispatch)=>{
     
@@ -13,13 +14,14 @@ const useSignup=async(obj,dispatch)=>{
 
         if (user?.data?.status){
            dispatch(registerSuccess(user?.data?.token))
-            alert('user register successfully')
-            cookies.set('token',user?.data?.token )
-            
+           toast.success('Register successfully')
+           cookies.set('token',user?.data?.token )
+           
         }
-
+        
     }catch (error) {
         console.log('error===> ',error)
+        toast.error(error)
         dispatch(registerFailure())
         
     }

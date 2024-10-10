@@ -4,6 +4,8 @@ import { FaYoutube } from "react-icons/fa"
 import { TextField } from '@mui/material';
 import useLogin from '../../APIs calls/loginApi';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const dispatch=useDispatch()
@@ -27,6 +29,7 @@ const Login = () => {
   return (
     <div className='login'>
       <div className="login-body">
+        <ToastContainer/>
         
         <h3> <FaYoutube size={30} color='red' />Login</h3>
         <div className='login-body-text-feilds'>
