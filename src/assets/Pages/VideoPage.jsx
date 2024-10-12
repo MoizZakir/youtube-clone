@@ -38,7 +38,7 @@ const VideoPage = () => {
   return (
     <div>
         <Navbar type='videopage'/>
-        <Video  data={video}/>
+        <Video   data={video}/>
     </div>
   )
 }

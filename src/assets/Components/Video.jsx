@@ -4,11 +4,22 @@ import '../Styles/video.css'
 import VideoList from './VideoList'
 import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai'
 import axios from 'axios'
+import useAllVideo from '../../APIs calls/getAllVideoApi'
 
 const Video = ({ data }) => {
     const {title,video:url,authId,likes,dislikes,desc}=data
     // console.log('auth===>',authId)
+    const [allVideo,setAllVideo]=useState([])
+    
     const [owner,setOwner]=useState({})
+
+    useEffect(()=>{
+        async function api(){
+            const data=await useAllVideo()
+            setAllVideo(data)
+        }
+        api()
+    },[])
 
     useEffect(()=>{
        async function api(){
@@ -50,32 +61,14 @@ const Video = ({ data }) => {
 
 
             </div>
-            {/* <div className='video-right'>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                <VideoList type='video'/>
-                
-                <VideoList type='video'/>
+            <div className='video-right'>
+            {allVideo.map((e)=>(
 
-            </div> */}
+                <VideoList type='video' data={e}/>
+            ))}
+             
+
+            </div>
 
         </div>
     )

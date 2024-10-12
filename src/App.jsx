@@ -35,7 +35,7 @@ function App() {
       getData()
 
     },[])
-    if(!user.currentUser){
+    if(!user.currentUser && !user.ip ){
       dispatch(IpFetch(ip))
 
     }

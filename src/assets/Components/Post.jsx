@@ -21,7 +21,8 @@ const Post = ({id ,title ,url,data}) => {
    <div>
      <p>{title}</p>
      {/* <p>this is my first video i hope you guyz like please like subscribe and share it .......</p> */}
-     <p style={{color:'gray'}}>this is my first video i hope {data?.veiws?.length }.viwes </p>
+     <p style={{color:'gray'}}>{data?.desc}.  <span style={{paddingLeft:"10px"}}>{data?.veiws?.length }   views</span> </p>
+    
 
    </div>
     </div>
