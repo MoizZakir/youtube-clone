@@ -137,6 +137,7 @@
     border-radius: 10px;
 }
 .sidebar{
+    /* box-shadow: 500px 2px 2000px 2000px rgba(0, 0, 0, 0.1); */
 
     display: flex;
     box-shadow: 25px;

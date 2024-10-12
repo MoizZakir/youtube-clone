@@ -25,6 +25,8 @@ const Create = () => {
   
 
   const handleSubmit = async (e) => {
+
+    if(!title ||!desc ||!video ||!img ||!keywords) return alert('Please complete All detail')
     async function fileSender(type){
     const data=new FormData()
     console.log('moiz')
@@ -40,16 +42,18 @@ const Create = () => {
     data.append('cloud_name`','dszfpdae2')
     
     try {
+      setLoad(false)
+      console.log('load==>',load)
       if(!img.current && !video.current  ) return alert('please add data')
         
       const res=await fetch(`https://api.cloudinary.com/v1_1/dszfpdae2/${type}/upload`,{method:"POST",body:data})
-      setLoad(()=>!load)
+      
       const cloudData=await res.json()
       console.log(cloudData?.url)
       if(type=="video"){
         videoUrl.current=cloudData?.url
         if(cloudData?.url){
-          setLoad(true)
+         
           
         }
       }
@@ -74,7 +78,7 @@ const Create = () => {
       desc:desc.current
     }
 
-    await useUploadVideo(obj)
+    await useUploadVideo(obj,load,setLoad)
 
     
  
@@ -149,7 +153,7 @@ const Create = () => {
         />
       </div>
 
-      <button  onClick={()=>handleSubmit()}>{load?'Upload Video ':'wait....'}</button>
+      <button disabled={!load} onClick={()=>handleSubmit()}>{load?'Upload Video ':'wait....'}</button>
     </div>
   );
 };

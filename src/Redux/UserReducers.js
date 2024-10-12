@@ -3,10 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const userSlice=createSlice({
     name:'user',
     initialState:{
-        currentUser: null,
+        ip: null,
+        currentUser:null,
         isFetching: false,
         error: false,
-        isLogging: false
+        isLogging: false,
     }
     ,
     reducers: {
@@ -22,6 +23,10 @@ const userSlice=createSlice({
             state.isFetching = false
             state.error = true
         },
+         IpFetch: (state,action) => {
+         state.ip=action.payload
+            
+        },
         
         logout:(state,action)=>{
             state.currentUser = null
@@ -29,6 +34,6 @@ const userSlice=createSlice({
         }
     }
 })
-export const { registerStart, registerSuccess, registerFailure,verifiedStarted,verifiedSuccess,verifiedFailure,logout } = userSlice.actions
+export const { registerStart,IpFetch, registerSuccess, registerFailure,logout } = userSlice.actions
 
 export default userSlice.reducer
