@@ -2,7 +2,7 @@ import axios from "axios"
 
 const useViews=async(obj,id)=>{
     try {
-        const api=await axios.put(`http://localhost:8000/api/video/${id}`,obj)
+        const api=await axios.put(`https://youtube-backend-rho.vercel.app/api/video/${id}`,obj)
         if(api.data.status){
             alert(api.data.message)
         }

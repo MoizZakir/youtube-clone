@@ -18,7 +18,7 @@ const SearchPage = () => {
   useEffect(() => {
     const api = async () => {
       try {
-        const video = await axios.get(`http://localhost:8000/api/video?keyword=${key}`)
+        const video = await axios.get(`https://youtube-backend-rho.vercel.app/api/video?keyword=${key}`)
         console.log('video respose', video)
         if (video?.data?.data) { setVideo(video?.data?.data); console.log('new=======>', Video) }
 
