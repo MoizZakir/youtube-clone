@@ -8,7 +8,10 @@ const Post = ({id ,title ,url,data}) => {
     const navigate=useNavigate()
     const user=useSelector(state=>state.user)
     const uId=user?.currentUser || user?.ip
-    console.log('viewsssss',data)
+    
+    
+
+
     
    
   return (
@@ -22,6 +25,7 @@ const Post = ({id ,title ,url,data}) => {
      <p>{title}</p>
      {/* <p>this is my first video i hope you guyz like please like subscribe and share it .......</p> */}
      <p style={{color:'gray'}}>{data?.desc}.  <span style={{paddingLeft:"10px"}}>{data?.veiws?.length }   views</span> </p>
+     <p style={{color:'gray'}}> </p>
     
 
    </div>

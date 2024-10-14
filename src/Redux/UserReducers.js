@@ -27,6 +27,20 @@ const userSlice=createSlice({
          state.ip=action.payload
             
         },
+         Follow: (state,action) => {
+         state.currentUser={
+            ...state.currentUser,
+            following:[...state.currentUser.following,action.payload]
+         }
+            
+        },
+        UnFollow: (state,action) => {
+            state.currentUser={
+               ...state.currentUser,
+               following:state.currentUser.following.filter((e)=>e!=action.payload)
+            }
+               
+           },
         
         logout:(state,action)=>{
             state.currentUser = null
@@ -34,6 +48,6 @@ const userSlice=createSlice({
         }
     }
 })
-export const { registerStart,IpFetch, registerSuccess, registerFailure,logout } = userSlice.actions
+export const { registerStart,IpFetch, registerSuccess, registerFailure,logout,Follow,UnFollow } = userSlice.actions
 
 export default userSlice.reducer
