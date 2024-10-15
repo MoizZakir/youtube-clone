@@ -21,7 +21,7 @@ const VideoList = ({ type, data }) => {
 
   return (
     <div className='videolist' onClick={() => { navigate(`/post/${data?._id}`) }}>
-      <img style={{ width: type == 'video' && width>800 ?  '50%':  type == 'video' && width<800?'95%' : '50%', height: type == 'video'  && width>800  ? '120px' :  type == 'video' && width<800?'200px' : '30vh' }} src={data?.thumbnail} alt="" />
+      <img style={{ width: type == 'video' && width>800 ?  '50%':  type == 'video' && width<800?'95%' :width<800? '95%':"50%", height: type == 'video'  && width>800  ? '120px' :  type == 'video' && width<800?'200px' : '40vh' }} src={data?.thumbnail} alt="" />
       <div>
         <p>
           {data?.title}            </p>
