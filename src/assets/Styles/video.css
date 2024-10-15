@@ -60,7 +60,7 @@
     color: gray;
 }
 .main-video{
-    height: 100%;
+    height: 500px;
     
     padding-bottom: 50px;
     width:50rem;
@@ -92,11 +92,15 @@
       
     }
     .main-video{
-        width:22rem
+        width: 95vw;
+        height: 380px;
         
     }
     
     .video-right{
-        width: 100%;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

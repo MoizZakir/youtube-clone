@@ -19,6 +19,8 @@ const Video = ({ data }) => {
     const user2=useSelector(state=>state?.user?.currentUser);
     const [owner, setOwner] = useState({})
     const [subscribe, setSubscribe] = useState(true)
+    let width=window. innerWidth
+    // console.log(';;;;;;',width)
     // const [length,setLength]=useState(user.following.length)
     const dispatch=useDispatch()
 
@@ -60,7 +62,7 @@ const Video = ({ data }) => {
         <div className='video'>
             
             <div className='main-video' >
-                <ReactPlayer style={{ zIndex: 2 }} width="100%" height="30%" url={url}
+                <ReactPlayer style={{ zIndex: 2 }} width="100%" height={width>=950?'450px':' 200px'} url={url}
                     controls={true} playing={true} />
 
                 <h3>{title}</h3>

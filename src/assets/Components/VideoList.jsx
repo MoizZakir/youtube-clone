@@ -7,6 +7,7 @@ import useOwner from '../../APIs calls/getOwner'
 const VideoList = ({ type, data }) => {
   const [owner, setOwner] = useState({})
   const navigate = useNavigate()
+  const width=window.innerWidth
 
   useEffect(() => {
     async function api() {
@@ -20,7 +21,7 @@ const VideoList = ({ type, data }) => {
 
   return (
     <div className='videolist' onClick={() => { navigate(`/post/${data?._id}`) }}>
-      <img style={{ width: type == 'video' ? '130px' : '50%', height: type == 'video' ? '17vh' : '30vh' }} src={data?.thumbnail} alt="" />
+      <img style={{ width: type == 'video' && width>800 ?  '50%':  type == 'video' && width<800?'95%' : '50%', height: type == 'video'  && width>800  ? '120px' :  type == 'video' && width<800?'200px' : '30vh' }} src={data?.thumbnail} alt="" />
       <div>
         <p>
           {data?.title}            </p>
