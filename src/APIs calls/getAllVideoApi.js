@@ -4,7 +4,7 @@ async function useAllVideo(){
 
     try {
         
-        const api=await axios.get('https://youtube-backend-rho.vercel.app/api/video/all')
+        const api=await axios.get('http://localhost:8000/api/video/all')
         //{headers:{Authorization:'Bearers '+cookies.get('token')}}
         console.log('alll   ==> ',api)
         if(!api?.data?.status){

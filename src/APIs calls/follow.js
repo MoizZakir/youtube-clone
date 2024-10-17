@@ -7,15 +7,15 @@ const useFollow=async(id,fId,dispatch)=>{
     
     console.log('=========sasxdcs=====',id,'cdscjdsncd',fId)
     try{
-        const checkUser=await axios.get(`https://youtube-backend-rho.vercel.app/api/user/${id}`)
+        const checkUser=await axios.get(`http://localhost:8000/api/user/${id}`)
         if(checkUser?.data?.status){
             if(!checkUser?.data?.data?.following?.includes(fId)){
-                await axios.put(`https://youtube-backend-rho.vercel.app/api/user/follow/`,{id:fId},{headers:{Authorization:'Bearers '+cookies.get('token')}})
+                await axios.put(`http://localhost:8000/api/user/follow/`,{id:fId},{headers:{Authorization:'Bearers '+cookies.get('token')}})
                 dispatch(Follow(fId))
             }
             
             else{
-                await axios.put(`https://youtube-backend-rho.vercel.app/api/user/unfollow/`,{id:fId},{headers:{Authorization:'Bearers '+cookies.get('token')}})
+                await axios.put(`http://localhost:8000/api/user/unfollow/`,{id:fId},{headers:{Authorization:'Bearers '+cookies.get('token')}})
                 dispatch(UnFollow(fId))
 
             }

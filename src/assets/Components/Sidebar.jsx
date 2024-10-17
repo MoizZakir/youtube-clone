@@ -31,7 +31,7 @@ const Sidebar = () => {
             <p>Sign in to like videos, comment, and subscribe</p>
             <div className="sidebar-body-item-div">
       
-       <button><FaRegUserCircle /> Sign in</button>
+       <button onClick={()=>navigate('/login')}><FaRegUserCircle /> Sign in</button>
        </div>
         </div>
         <hr />
@@ -45,7 +45,7 @@ const Sidebar = () => {
         <Sidebaritems name='Setting' logo={<IoSettingsOutline />} />
         <Sidebaritems name='Report history' logo={<CiFlag1 />} />
         <Sidebaritems name='help' logo={<IoIosHelpCircleOutline />} />
-       {user&&( <Sidebaritems  name='logout' logo={<IoMdLogOut onClick={()=>dispatch(logout())} />} />
+       {user&&( <Sidebaritems  name='logout' logo={<IoMdLogOut style={{padding:'5px'}}   onClick={()=>dispatch(logout())} />} />
 )}
 
     </div>

@@ -6,6 +6,8 @@ import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
 import Post from '../Components/Post';
 import useUploadVideo from '../../APIs calls/uploadVideo';
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Create = () => {
   const [load,setLoad]=useState(true)
@@ -44,7 +46,7 @@ const Create = () => {
     try {
       setLoad(false)
       console.log('load==>',load)
-      if(!img.current && !video.current  ) return alert('please add data')
+      if(!img.current && !video.current  ) return toast.info('please add data')
         
       const res=await fetch(`https://api.cloudinary.com/v1_1/dszfpdae2/${type}/upload`,{method:"POST",body:data})
       
@@ -86,6 +88,7 @@ const Create = () => {
 
   return (
     <div className="upload-form" >
+      <ToastContainer/>
       <h2>Upload a New Video</h2>
       <p>Fill out the form to add a new video to your library.</p>
       

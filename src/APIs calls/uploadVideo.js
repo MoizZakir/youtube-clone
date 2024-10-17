@@ -1,4 +1,5 @@
 import axios from "axios"
+import { toast } from "react-toastify"
 import Cookies from "universal-cookie"
 
 const useUploadVideo=async(obj,load,setLoad)=>{
@@ -6,9 +7,17 @@ const useUploadVideo=async(obj,load,setLoad)=>{
     console.log('obj==> ',obj)
     
     try {
-        const video=await axios.post('https://youtube-backend-rho.vercel.app/api/video/create',obj,{headers:{Authorization:'Bearers '+cookies.get('token')}})
+        const video=await axios.post('http://localhost:8000/api/video/create',obj,{headers:{Authorization:'Bearers '+cookies.get('token')}})
         console.log(video)
         setLoad(true)
+        if(video?.data.status){
+            toast.success('video upload Succefully')
+        }
+        else{
+            toast.error(video?.data?.message)
+
+        }
+        
         console.log('load==>',load)
         
     } catch (error) {

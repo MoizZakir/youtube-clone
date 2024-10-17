@@ -3,9 +3,9 @@
     
     /* min-height: 200px; */
     /* padding-bottom: 10px; */
-    padding: 0px  5px 0px 1px ;
+    padding: 5px 0px ;
     height: max-content;
-    border: 0.5px solid rgb(206, 206, 206);
+    border-bottom: 0.5px solid rgb(206, 206, 206);
     border-radius: 10px;
     
 }

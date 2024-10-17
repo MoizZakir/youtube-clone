@@ -61,7 +61,7 @@ const searchHanlder=()=>{
         {
          (width>550 || searchOpen)  &&(
             <div style={{width: searchOpen ?"90%":'45%'}} className="serachbar">
-            <input onChange={(e)=>{search.current=e.target.value}} type="search" placeholder='Search' />
+            <input onChange={(e)=>{search.current=e.target.value}} type="search" placeholder='Searchs' />
             <button onClick={()=>{searchHanlder()}}><CiSearch /></button>
     
            </div>
@@ -70,8 +70,8 @@ const searchHanlder=()=>{
 
       
        <div style={{display:searchOpen && 'none'}} className="signupbtn">
-       <button className='dotbtn'><BsThreeDotsVertical  /></button>
-       {user?(<p style={{ marginRight:'5px',padding:"5px", borderRadius:"50%", height:"25px",width:'25px',textAlign:'center', backgroundColor:"brown",color:"white"}}>{user?.name[0]}</p>):(<button><FaRegUserCircle /> Sign in</button>)}
+       {/* <button className='dotbtn'><BsThreeDotsVertical  /></button> */}
+       {user?(<p style={{ marginRight:'5px',padding:"5px", borderRadius:"50%", height:"25px",width:'25px',textAlign:'center', backgroundColor:"brown",color:"white"}}>{user?.name[0]}</p>):(<button className='dotbtn'><FaRegUserCircle /> Sign in</button>)}
        
        </div>
 

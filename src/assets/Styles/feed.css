@@ -2,8 +2,8 @@
     width: 86%;
     min-height:90vh;
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    /* justify-content: space-between; */
+    gap: 20px;
     flex-wrap: wrap;
     margin-left:190px;
     /* padding-top: 50px; */
@@ -12,8 +12,9 @@
 @media (max-width:550px) {
     .feed{
         width: 95%;
-        margin-left: 0px;
+        margin-left: 10px;
 
     }
     
 }
+/* http://localhost:8000/ */

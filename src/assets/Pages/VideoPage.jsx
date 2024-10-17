@@ -14,7 +14,7 @@ const VideoPage = () => {
     //GET VIDEO FOR PLAYING FUNCTION
     async function api(){
       try {
-        const video=await axios.get(`https://youtube-backend-rho.vercel.app/api/video/${id}`)
+        const video=await axios.get(`http://localhost:8000/api/video/${id}`)
         if(video?.data?.status){
           
           setVideo(video?.data?.data)

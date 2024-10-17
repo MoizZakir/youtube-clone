@@ -54,6 +54,8 @@
 .serachbar input{
     border: none;
     width: 90%;
+    border-radius: 10px ;
+    height: 5vh;
     outline: none;
 }
 .serachbar button{
@@ -83,7 +85,7 @@
     background: none;
     font-size: 15px;
 }
-.signupbtn button:nth-child(2){
+.signupbtn button:nth-child(1){
     background: none;
 
     padding: 10px 8px;
@@ -117,7 +119,9 @@
         display: block;
     }
     .signupbtn{
-        justify-content: flex-start;
+        /* border: 1px solid red; */
+        width: 100px;
+        /* justify-content: flex-start; */
         padding-left: 10px;
     }
     
