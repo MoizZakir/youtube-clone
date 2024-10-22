@@ -10,7 +10,7 @@ const useSignup=async(obj,dispatch)=>{
     console.log(" ==> ",obj)
     dispatch(registerStart())
     try {
-        const user= await axios.post('http://localhost:8000/api/auth/signup',obj)
+        const user= await axios.post('https://youtube-backend-rho.vercel.app/api/auth/signup',obj)
 
         if (user?.data?.status){
            dispatch(registerSuccess(user?.data?.data))

@@ -15,7 +15,7 @@ const Home = () => {
   const [video,setVideo]=useState([])
   useEffect(()=>{
    async function moiz(){
-    const api=await axios.get('http://localhost:8000/api/video/all')
+    const api=await axios.get('https://youtube-backend-rho.vercel.app/api/video/all')
     //  const api=await axios.get('https://youtube-backend-rho.vercel.app/api/home',{headers:{Authorization:'Bearers '+cookies.get('token')}})
     //{headers:{Authorization:'Bearers '+cookies.get('token')}}
     console.log(api)

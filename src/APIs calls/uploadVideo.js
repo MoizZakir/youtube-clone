@@ -7,7 +7,7 @@ const useUploadVideo=async(obj,load,setLoad)=>{
     console.log('obj==> ',obj)
     
     try {
-        const video=await axios.post('http://localhost:8000/api/video/create',obj,{headers:{Authorization:'Bearers '+cookies.get('token')}})
+        const video=await axios.post('https://youtube-backend-rho.vercel.app/api/video/create',obj,{headers:{Authorization:'Bearers '+cookies.get('token')}})
         console.log(video)
         setLoad(true)
         if(video?.data.status){

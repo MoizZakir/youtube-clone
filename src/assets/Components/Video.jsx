@@ -46,7 +46,7 @@ const Video = ({ data }) => {
     // GET USERS INFORMATION
     useEffect(() => {
         async function api() {
-            const data = await axios.get(`http://localhost:8000/api/user/${authId}`)
+            const data = await axios.get(`https://youtube-backend-rho.vercel.app/api/user/${authId}`)
             console.log('===>res  ', data)
 
             if (data?.data?.status) return setOwner(data?.data?.data); console.log(owner)
